@@ -1,6 +1,7 @@
 # log-passport
 
-`console.log` with called function name and source location
+`console.log` with called function name and source location  
+simmilar to [console.trace](https://developer.mozilla.org/en/docs/Web/API/console/trace)
 
 ## Usage
 
