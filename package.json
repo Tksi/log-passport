@@ -28,7 +28,8 @@
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
-    "vite-node": "^0.15.2"
+    "vite-node": "^0.15.2",
+    "vite-tsconfig-paths": "^3.5.0"
   },
   "scripts": {
     "start": "vite-node index.ts",
