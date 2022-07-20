@@ -1,5 +1,7 @@
 # log-passport
 
+`console.log` with called function name and source location
+
 ## Usage
 
 ```bash
