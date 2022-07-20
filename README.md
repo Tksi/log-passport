@@ -1,10 +1,12 @@
-## usage
+# log-passport
+
+## Usage
 
 ```bash
 npm i tksi/log-passport
 ```
 
-sample
+### Sample
 
 ```javascript
 import log from 'log-passport';
@@ -19,3 +21,8 @@ someFunction();
 ```
 
 <img src="./img.png" width="350rem">
+
+## Note
+
+- Not compatible with CommonJS
+- source location may be incorrect in some cases (depends on `Error.prototype.stack`)
