@@ -15,7 +15,6 @@ module.exports = {
     eqeqeq: 'warn',
     'max-params': 'warn',
     'max-depth': 'warn',
-    'prefer-destructuring': 'warn',
     'array-callback-return': 'warn',
     'no-return-await': 'warn',
     'require-atomic-updates': 'warn',
@@ -55,7 +54,6 @@ module.exports = {
     ],
     'import/newline-after-import': 'warn',
     'import/no-duplicates': 'warn',
-    'import/no-default-export': 'warn',
     '@typescript-eslint/padding-line-between-statements': [
       'warn',
       { blankLine: 'always', prev: '*', next: 'type' },
@@ -67,6 +65,7 @@ module.exports = {
     ],
     '@typescript-eslint/sort-type-union-intersection-members': 'warn',
     '@typescript-eslint/consistent-type-imports': 'warn',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   overrides: [
     {

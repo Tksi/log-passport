@@ -1,27 +1,43 @@
 {
+  "name": "log-passport",
+  "version": "0.1.0",
   "type": "module",
+  "description": "log with where from",
+  "main": "dist/index.js",
+  "keywords": [
+    "log"
+  ],
+  "author": "Tksi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tksi/log-passport/issues"
+  },
+  "homepage": "https://github.com/Tksi/log-passport#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tksi/log-passport.git"
+  },
   "devDependencies": {
     "@types/node": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
-    "@vitest/ui": "^0.15.2",
     "eslint": "^8.18.0",
     "eslint-plugin-import": "^2.26.0",
     "nodemon": "^2.0.16",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
-    "vite-node": "^0.15.2",
-    "vite-tsconfig-paths": "^3.5.0",
-    "vitest": "^0.15.2"
+    "vite-node": "^0.15.2"
   },
   "scripts": {
     "start": "vite-node index.ts",
     "dev": "nodemon --exec \"npm run start\" -e ts",
     "lint": "eslint . --ignore-pattern node_modules/",
     "format": "npm run lint -- --fix; prettier --ignore-unknown --write '{,!(node_modules)/**/}*'",
-    "test": "vitest --watch false",
-    "test:open": "vitest --ui",
     "type": "tsc --noEmit",
-    "unused": "npx -y ts-unused-exports tsconfig.json --ignoreFiles=.*config"
+    "unused": "npx -y ts-unused-exports tsconfig.json --ignoreFiles=.*config",
+    "build": "tsc -d"
+  },
+  "dependencies": {
+    "stacktrace-parser": "^0.1.10"
   }
 }
