@@ -36,7 +36,6 @@
     "lint": "eslint . --ignore-pattern node_modules/",
     "format": "npm run lint -- --fix; prettier --ignore-unknown --write '{,!(node_modules)/**/}*'",
     "type": "tsc --noEmit",
-    "unused": "npx -y ts-unused-exports tsconfig.json --ignoreFiles=.*config",
     "build": "tsc --build --clean && tsc -d"
   },
   "dependencies": {
