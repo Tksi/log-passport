@@ -37,7 +37,7 @@
     "format": "npm run lint -- --fix; prettier --ignore-unknown --write '{,!(node_modules)/**/}*'",
     "type": "tsc --noEmit",
     "unused": "npx -y ts-unused-exports tsconfig.json --ignoreFiles=.*config",
-    "build": "tsc -d"
+    "build": "tsc --build --clean && tsc -d"
   },
   "dependencies": {
     "stacktrace-parser": "^0.1.10"
