@@ -19,6 +19,7 @@ export const log = (...args: any[]) => {
   if (lastSourceLocation !== sourceLocation) {
     console.log(`${c.red}${functionName}${c.reset}`, sourceLocation);
   }
+
   console.log(...args);
 
   lastSourceLocation = sourceLocation;
