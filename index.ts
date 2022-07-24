@@ -2,16 +2,26 @@ import { Console } from 'console';
 import * as stackTraceParser from 'stacktrace-parser';
 
 const console = new Console({ stdout: process.stdout, stderr: process.stderr });
+const c = {
+  red: '\u001b[36m',
+  reset: '\u001b[0m',
+};
+let lastSourceLocation: string;
 
 export const log = (...args: any[]) => {
   const latestTrace = stackTraceParser.parse(new Error().stack ?? '')[1];
-  console.log(
-    `\u001b[36m${latestTrace.methodName}\u001b[0m`,
-    `${latestTrace.file?.replace('file://', '')}:${latestTrace.lineNumber}:${
-      latestTrace.column
-    }`
-  );
+
+  const functionName = latestTrace.methodName;
+  const sourceLocation = `${latestTrace.file?.replace('file://', '')}:${
+    latestTrace.lineNumber
+  }:${latestTrace.column}`;
+
+  if (lastSourceLocation !== sourceLocation) {
+    console.log(`${c.red}${functionName}${c.reset}`, sourceLocation);
+  }
   console.log(...args);
+
+  lastSourceLocation = sourceLocation;
 };
 
 export default log;
