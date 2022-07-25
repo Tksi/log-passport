@@ -1,5 +1,8 @@
 import { Console } from 'console';
+import path from 'path';
+import url from 'url';
 import * as stackTraceParser from 'stacktrace-parser';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const console = new Console({ stdout: process.stdout, stderr: process.stderr });
 const c = {
     red: '\u001b[36m',
@@ -9,7 +12,9 @@ let lastSourceLocation;
 export const log = (...args) => {
     const latestTrace = stackTraceParser.parse(new Error().stack ?? '')[1];
     const functionName = latestTrace.methodName;
-    const sourceLocation = `${latestTrace.file?.replace('file://', '')}:${latestTrace.lineNumber}:${latestTrace.column}`;
+    const sourceLocation = `${latestTrace.file
+        ?.replace('file://', '')
+        .replace(`${__dirname}/`, '')}:${latestTrace.lineNumber}:${latestTrace.column}`;
     if (lastSourceLocation !== sourceLocation) {
         console.log(`${c.red}${functionName}${c.reset}`, sourceLocation);
     }
